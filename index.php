@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo 2</title>
+    <title>Exemplo 3</title>
 </head>
 <body>
-    <h1>PHP POO - Exemplo 2</h1>
+    <h1>PHP POO - Exemplo 3</h1>
     <hr>
 
     <h2>Assuntos abordados:</h2>
     <ul>
-        <li>Criação dos objetos</li>
-        <li>Uso do método construtor</li>
-        <li>Uso do <code>$this</code> para acessar as propriedades</li>
+        <li>Acesso direto a Propriedades</li>
+        <li>Atribuição de dados e leitura</li>
     </ul>
 
 <?php 
@@ -22,9 +21,27 @@
 require_once "src/cliente.php";
 
 // Criação dos objetos
-$clienteA = new Cliente('Lucas', 'lucasmendes@gmail.com');
-$clienteB = new Cliente('Jon Oliva', 'savatage@msn.com');
+$clienteA = new Cliente;
+$clienteB = new Cliente;
+
+// Atribuindo dados às propriedades do objeto
+$clienteA->nome = "Tiago";
+$clienteA->email = "tiago@gmail.com";
+$clienteA->telefones = ["(11) 2135-0300, (11)98312-5076"];
+
+$clienteB->nome = "Lucas";
+$clienteB->email = "lucas@outlook.com";
+$clienteB->telefones = array("(11) 99999-9999");
 ?>    
-     <pre> <?=var_dump($clienteA, $clienteB)?></pre>
+
+<h2>Dados do objetos(leitura)</h2>
+<h3> <?=$clienteA->nome?> </h3>
+<p>E-mail: <?=$clienteA->email?> </p>
+<p>Telefone: <?=implode(", ",$clienteA->telefones)?> </p>
+
+<h3> <?=$clienteB->nome?> </h3>
+<p>E-mail: <?=$clienteB->email?> </p>
+<p>Telefone: <?=implode(", ",$clienteB->telefones)?> </p>
+
 </body>
 </html>

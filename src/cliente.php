@@ -1,19 +1,39 @@
 <?php
 
 class Cliente {
-    // Propriedade
-    public string $nome;
-    public string $email;
-    public string $senha= "";
-    public array $telefones;
+    // Propriedade (ou atributos)
+    private string $nome;
+    private string $email;
+    private string $senha;
+    
 
-    public function exibirDados(){
-           echo "<h3> $this->nome </h3>";
-           echo "<ul>";
-           echo "<li> $this->email</li>";
-           echo "<li>". implode(', ',$this->telefones)."</li>";
-           echo "</ul>";
+    /* Métodos getters e setters */
+    public function getNome():string{
+         return $this->nome;
     }
 
-}
+    public function getEmail():string{
+        return $this->email;
+    }
+
+    public function getSenha():string {
+        return $this->senha;
+    }
+
+    
+    public function setNome(string $nome) {
+         $this->nome = $nome;
+    }
+
+    public function setEmail(string $email) {
+        $this->email = $email;
+    }
+
+    public function setSenha(string $senha){
+        $this->senha = password_hash($senha, PASSWORD_DEFAULT);
+    }
+    
+
+
+};
 ?>

@@ -13,11 +13,12 @@
     <h2>Assuntos abordados:</h2>
     <ul>
         <li>Herança</li>
+        <li>Classe abstrata (não pode ser instânciada)</li>
     </ul>
 
 <?php 
 // Importando a classe
-require_once "src/cliente.php"; // Superclcasse
+//require_once "src/cliente.php"; // Superclcasse
 require_once "src/PessoaFisica.php"; // Subclasse
 require_once "src/PessoaJuridica.php"; // Subclasse
 
@@ -34,10 +35,12 @@ $clientePJ->setAnoFundacao(1930);
 $clientePJ->setNomeFantasia('Maça');
 
 
+//$cliente = new cliente; // Erro pois o Cliente é abstrato
+
+
 ?>
 
-<pre> <?=var_dump($clientePF)?> </pre>
-<pre> <?=var_dump($clientePJ)?> </pre>
+<pre> <?=var_dump($clientePF,$clientePJ)?> </pre>
 
 <h2>Exibindo dados</h2>
 <h3> <?= $clientePF->getNome()?> </h3>

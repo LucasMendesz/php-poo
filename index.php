@@ -19,13 +19,25 @@
 // Importando a classe
 require_once "src/cliente.php";
 require_once "src/PessoaFisica.php";
+require_once "src/PessoaJuridica.php";
 
 $clientePF = new PessoaFisica;
+$clientePF->setNome('Tiago');
+$clientePF->setEmail('tiago@gmail.com');
+$clientePF->setSenha('12345');
+$clientePF->setCpf('000.000.000-10');
+$clientePF->setIdade('19');
+
+$clientePJ = new PessoaJuridica;
+$clientePJ->setCnpj('000000000');
+$clientePJ->setAnoFundacao(1930);
+$clientePJ->setNomeFantasia('Maça');
 
 
 ?>
 
 <pre> <?=var_dump($clientePF)?> </pre>
+<pre> <?=var_dump($clientePJ)?> </pre>
 
 
 

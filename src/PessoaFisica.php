@@ -15,19 +15,19 @@ class PessoaFisica extends Cliente{
         return $this->idade;
     }
 
-    
-    public function setCpf(string $cpf): self
+
+    public function setCpf(string $cpf)
     {
         $this->cpf = $cpf;
 
-        return $this;
+        
     }
 
-    public function setIdade(int $idade): self
+    public function setIdade(int $idade)
     {
         $this->idade = $idade;
 
-        return $this;
+        
     }
 }
 

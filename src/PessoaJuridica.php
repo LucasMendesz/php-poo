@@ -21,27 +21,27 @@ class PessoaJuridica extends Cliente{
     }
 
    
-    public function setCnpj(string $cnpj): self
+    public function setCnpj(string $cnpj)
     {
         $this->cnpj = $cnpj;
 
-        return $this;
+        
     }
 
     
-    public function setAnoFundacao(int $anoFundacao): self
+    public function setAnoFundacao(int $anoFundacao)
     {
         $this->anoFundacao = $anoFundacao;
 
-        return $this;
+        
     }
 
     
-    public function setNomeFantasia(string $nomeFantasia): self
+    public function setNomeFantasia(string $nomeFantasia)
     {
         $this->nomeFantasia = $nomeFantasia;
 
-        return $this;
+        
     }
 }
 

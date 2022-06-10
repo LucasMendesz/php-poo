@@ -17,9 +17,9 @@
 
 <?php 
 // Importando a classe
-require_once "src/cliente.php";
-require_once "src/PessoaFisica.php";
-require_once "src/PessoaJuridica.php";
+require_once "src/cliente.php"; // Superclcasse
+require_once "src/PessoaFisica.php"; // Subclasse
+require_once "src/PessoaJuridica.php"; // Subclasse
 
 $clientePF = new PessoaFisica;
 $clientePF->setNome('Tiago');
@@ -39,7 +39,15 @@ $clientePJ->setNomeFantasia('Maça');
 <pre> <?=var_dump($clientePF)?> </pre>
 <pre> <?=var_dump($clientePJ)?> </pre>
 
+<h2>Exibindo dados</h2>
+<h3> <?= $clientePF->getNome()?> </h3>
+<h3> <?= $clientePF->getEmail()?> </h3>
+<h3> <?= $clientePF->getSenha()?> </h3>
+<h3> <?= $clientePF->getCpf()?> </h3>
+<h3> <?= $clientePF->getIdade()?> </h3>
 
-
+<h3> <?= $clientePJ->getCnpj()?>  </h3>
+<h3> <?= $clientePJ->getAnoFundacao()?> </h3>
+<h3> <?= $clientePJ->getNomeFantasia()?> </h3>
 </body>
 </html>

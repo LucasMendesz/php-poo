@@ -3,7 +3,7 @@ require_once "Cliente.php";
 class PessoaJuridica extends Cliente{
     private string $cnpj;
     private int $anoFundacao;
-    private string $nomeFantasia;
+    private string $nome;
 
 
     public function __construct()
@@ -11,7 +11,12 @@ class PessoaJuridica extends Cliente{
         $this->setSituacao("Verificar");
     }
 
-    
+    public function exibirdados(){
+        echo "<h3>".$this->getNome()."</h3>";
+        echo "<p>".$this->getCnpj()."</p>";
+        echo "<p>".$this->getAnoFundacao()."</p>";
+    }
+
     public function getCnpj(): string
     {
         return $this->cnpj;
@@ -21,9 +26,9 @@ class PessoaJuridica extends Cliente{
         return $this->anoFundacao;
     }
 
-    public function getNomeFantasia(): string
+    public function getNome(): string
     {
-        return $this->nomeFantasia;
+        return $this->nome;
     }
 
    
@@ -31,7 +36,6 @@ class PessoaJuridica extends Cliente{
     {
         $this->cnpj = $cnpj;
 
-        
     }
 
     
@@ -43,9 +47,9 @@ class PessoaJuridica extends Cliente{
     }
 
     
-    public function setNomeFantasia(string $nomeFantasia)
+    public function setNome(string $nome)
     {
-        $this->nomeFantasia = $nomeFantasia;
+        $this->nome = "Empresa: ".$nome;
 
         
     }

@@ -34,7 +34,7 @@ abstract class Cliente {
     }
 
     public function setNome(string $nome) {
-         $this->nome = $nome;
+         $this->nome = "Cliente: ".$nome;
     }
 
     public function setEmail(string $email) {

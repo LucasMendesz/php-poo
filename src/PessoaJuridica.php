@@ -5,6 +5,12 @@ class PessoaJuridica extends Cliente{
     private int $anoFundacao;
     private string $nomeFantasia;
 
+
+    public function __construct()
+    {
+        $this->setSituacao("Verificar");
+    }
+
     
     public function getCnpj(): string
     {

@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo 6</title>
+    <title>Exemplo 7</title>
 </head>
 <body>
-    <h1>PHP POO - Exemplo 6</h1>
+    <h1>PHP POO - Exemplo 7</h1>
     <hr>
 
     <h2>Assuntos abordados:</h2>
     <ul>
-        <li>Polimorfismo</li>
+        <li>Propriedades e Métodos Estáticos</li>
     </ul>
 
 <?php 
@@ -22,31 +22,29 @@ require_once "src/PessoaFisica.php"; // Subclasse
 require_once "src/PessoaJuridica.php"; // Subclasse
 
 
-$clientePF = new PessoaFisica;
-$clientePF->setNome('Tiago');
-$clientePF->setEmail('tiago@gmail.com');
-$clientePF->setSenha('12345');
-$clientePF->setCpf('000.000.000-10');
-$clientePF->setIdade('19');
+ $clientePF = new PessoaFisica;
+ $clientePF->setNome('Tiago');
+ $clientePF->setIdade('19');
 
-$clientePJ = new PessoaJuridica;
-$clientePJ->setCnpj('000000000');
-$clientePJ->setAnoFundacao(1930);
-$clientePJ->setNome('Rodrigo');                                                                                        //$cliente = new cliente; // Erro pois o Cliente é abstrato
+
+// Acessando e atribuindo uma propriedade estática
+PessoaFisica::$cidade = "São paulo";
+
+// Acessando e lendo o valor de uma propriedade estática
+echo PessoaFisica::$cidade;
+
+
+//$cliente = new cliente; // Erro pois o Cliente é abstrato
 ?>
 <h3>Pessoa Fisica</h3>
-<p> <?=$clientePF->getNome()?> </p>
-<section> <?=$clientePF->exibirdados()?> </section>
-
-<hr>
-
-
-<h3>Pessoa Juridica</h3>
-<p> <?=$clientePJ->getNome()?> </p>
-<section> <?=$clientePJ->exibirdados()?> </section>
+<p> <b>Nome:</b> <?=$clientePF->getNome()?> </p>
+<p> <b>Idade:</b> <?=$clientePF->getIdade()?> </p>
+<p> Tipo de atendimento: <?=PessoaFisica::verificaIdade($clientePF->getIdade())?></p>
 
 
-<pre> <?=var_dump($clientePF,$clientePJ)?> </pre>
+
+
+
 
 
 
